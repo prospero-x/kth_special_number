@@ -1,7 +1,4 @@
 
-SPECIAL_NUMBERS_FILE = "special_numbers.json"
-
-
 def kth_special_number(k):
 	'''
 	Find the kth special number, where a special number is defined

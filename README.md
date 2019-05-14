@@ -24,16 +24,16 @@ To run the test, simply call `$ pytest` from the project root.
 The central problem is, given an integer whose digits we KNOW add up to 10, how can we easily
 find the next greatest integer?
 
-#### The Basic Process
+### The Basic Process
 Let's look at a subsequence of special numbers:
-2331100
-2332000
-2340001
-2340010
-2340100
-2341000
-2350000
-2400004
+- 2331100
+- 2332000
+- 2340001
+- 2340010
+- 2340100
+- 2341000
+- 2350000
+- 2400004
 
 This sequence actually contains everything we need to know to develop an algorithm. Let's break it up even further:
 
@@ -94,7 +94,7 @@ Simple again: C is incremented and D is decremented.
 This one is complicated again: B is incremented, C is reset to 0, and G is increased by 4.
 
 ---
-#### General algorithm
+### General algorithm
 
 Every time we want to find the next special number, we need to start by finding the right-most (least significant) non-zero digit. Once we've found it, we do three things:
 
