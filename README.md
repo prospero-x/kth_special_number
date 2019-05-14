@@ -1,3 +1,25 @@
+## Kth-Special Number
+This is my solution to the Kth Special Number Problem, which can be stated as follows:
+
+```
+A Special Number is defined as a positive integer whose digits add up to 10.
+Write a function that takes an integer k and computes the kth special number.
+The sequence is zero-indexed, so an input of k=0 should return 19, k=1 should return 28, etc.
+```
+
+## Requirements
+
+Python 3.6.8 or greater.
+
+## Development
+
+You should regularly run `$ flake8` from the project root. Certain warnings and errors are ignored according to the `[flake8]` section of `setup.cfg`.
+
+## Testing
+The test compares the first 50,000 special numbers returned by the function `src.kth_special_number.first_k_special_numbers` with 50,000 numbers computed by a simple brute force method. Computing the numbers by brute force can be time-consuming, so they are provided in a json in the `test` module.
+
+To run the test, simply call `$ pytest` from the project root.
+
 ## The Algorithm
 The central problem is, given an integer whose digits we KNOW add up to 10, how can we easily
 find the next greatest integer?

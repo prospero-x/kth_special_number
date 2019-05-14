@@ -8,6 +8,7 @@ from src import first_k_special_numbers
 # them in a json file.
 PRECOMPUTED_SPECIAL_NUMBERS_FILE = "test/special_numbers.json"
 
+
 def first_k_special_numbers_brute_force(k):
 	'''
 	Find the first k special numbers using the brute force method.
@@ -37,6 +38,7 @@ def sum_of_digits(n):
 		s += ones_digit
 		n = n // 10
 	return s
+
 
 def save_nums_to_file(nums, filename):
 	with open(filename, 'w') as f:

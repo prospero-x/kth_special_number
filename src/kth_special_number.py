@@ -1,7 +1,6 @@
-import json
-
 
 SPECIAL_NUMBERS_FILE = "special_numbers.json"
+
 
 def kth_special_number(k):
 	'''
@@ -9,7 +8,7 @@ def kth_special_number(k):
 	as an integer whose digits add up to 10. The sequence is 0-indexed,
 	so kth_special_number(0) = 19, kth_special_number(1) = 28, etc.
 	'''
-	digits = [1,9]
+	digits = [1, 9]
 	digit_to_reset = -1
 
 	for _ in range(k):
@@ -52,6 +51,7 @@ def kth_special_number(k):
 
 	return int("".join([str(digit) for digit in digits]))
 
+
 def first_k_special_numbers(k):
 	'''
 	Return a list of the first k specials number, where a special number
@@ -59,7 +59,7 @@ def first_k_special_numbers(k):
 	0-indexed, so kth_special_number(0) = 19, kth_special_number(1) = 28, etc.
 	'''
 	nums = [19]
-	digits = [1,9]
+	digits = [1, 9]
 	digit_to_reset = -1
 
 	for _ in range(k):
