@@ -4,6 +4,11 @@ import json
 SPECIAL_NUMBERS_FILE = "special_numbers.json"
 
 def kth_special_number(k):
+	'''
+	Find the kth special number, where a special number is defined
+	as an integer whose digits add up to 10. The sequence is 0-indexed,
+	so kth_special_number(0) = 19, kth_special_number(1) = 28, etc.
+	'''
 	digits = [1,9]
 	digit_to_reset = -1
 
@@ -48,6 +53,11 @@ def kth_special_number(k):
 	return int("".join([str(digit) for digit in digits]))
 
 def first_k_special_numbers(k):
+	'''
+	Return a list of the first k specials number, where a special number
+	is defined as an integer whose digits add up to 10. The sequence is
+	0-indexed, so kth_special_number(0) = 19, kth_special_number(1) = 28, etc.
+	'''
 	nums = [19]
 	digits = [1,9]
 	digit_to_reset = -1
@@ -94,47 +104,3 @@ def first_k_special_numbers(k):
 		nums.append(int("".join([str(digit) for digit in digits])))
 
 	return nums
-
-def first_k_special_numbers_brute_force(k):
-	n = 19
-	nums = [n]
-	i = 0
-	while i < k:
-		n += 1
-		s = sum_of_digits(n)
-		if s == 10:
-			print(i)
-			nums.append(n)
-			i += 1
-	return nums
-
-
-def sum_of_digits(n):
-	s = 0
-	while n > 0:
-		ones_digit = n - n // 10 * 10
-		s += ones_digit
-		n = n // 10
-	return s
-
-def save_nums_to_file(nums, filename):
-	with open(filename, 'w') as f:
-		json.dump(nums, f)
-
-
-def test_kth_special_number(k):
-	passed = True
-	expected_nums = first_k_special_numbers_brute_force(k)
-	for k, expected in enumerate(expected_nums):
-		result = kth_special_number(k)
-		if result != expected:
-			passed = False
-			print("For k=%d, expected %d but got %d instead" % (k, expected, result))
-
-	if passed:
-		print("Verified %d correct special numbers" % len(expected_nums))
-
-if __name__ == '__main__':
-	# nums = first_k_special_numbers_brute_force(50000)
-	# save_nums_to_file(nums, SPECIAL_NUMBERS_FILE)
-	test_kth_special_number(500)
